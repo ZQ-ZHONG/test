@@ -112,7 +112,7 @@ ale_data = {
     )
 }
 
-# 修改为使用LaTeX格式，确保希腊字母显示为斜体
+
 var_to_greek = {
     'sigma': r'$\sigma$',
     'omega': r'$\omega$',
@@ -122,11 +122,11 @@ var_to_greek = {
     'eta': r'$\eta$',
     'gamma': r'$\gamma$',
     'beta': r'$\beta$',
-    'gamma_f': r'$\gamma_f$'  # f作为下标
+    'gamma_f': r'$\gamma_f$'  
 }
 user_order = ['sigma', 'omega', 'delta', 'kappa', 'theta', 'eta', 'gamma', 'beta', 'gamma_f']  # Subplot order
 
-# 映射普通字符到数学斜体Unicode
+
 italic_map = {
     'A': '𝐴', 'B': '𝐵', 'C': '𝐶', 'D': '𝐷', 'E': '𝐸', 'F': '𝐹', 'G': '𝐺',
     'H': '𝐻', 'I': '𝐼', 'J': '𝐽', 'K': '𝐾', 'L': '𝐿', 'M': '𝑀', 'N': '𝑁',
@@ -143,7 +143,6 @@ italic_map = {
 }
 
 
-# 辅助函数：将标签转换为斜体形式（字母斜体，数字正常）
 def convert_to_italic(text):
     """将文本中的希腊字母和拉丁字母转为斜体，数字保持正常"""
     result = []
@@ -152,7 +151,6 @@ def convert_to_italic(text):
         if char.isdigit() or char in '():':
             result.append(char)
         else:
-            # 处理下标数字（保留下标格式）
             if char in ['₁', '₂', '₃', '₄', '₅', '₆', '₇', '₈', '₉', '₀']:
                 result.append(char)
             else:
