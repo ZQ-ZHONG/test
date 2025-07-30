@@ -144,11 +144,9 @@ italic_map = {
 
 
 def convert_to_italic(text):
-    """将文本中的希腊字母和拉丁字母转为斜体，数字保持正常"""
     result = []
     for char in text:
-        # 保留数字和标点不变
-        if char.isdigit() or char in '():':
+         if char.isdigit() or char in '():':
             result.append(char)
         else:
             if char in ['₁', '₂', '₃', '₄', '₅', '₆', '₇', '₈', '₉', '₀']:
